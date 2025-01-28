@@ -4,10 +4,11 @@ import torch
 import torch.nn as nn
 from torch.nn.modules.batchnorm import _BatchNorm
 
-from efficientvit.models.nn.triton_rms_norm import TritonRMSNorm2dFunc
+# from efficientvit.models.nn.triton_rms_norm import TritonRMSNorm2dFunc
 from efficientvit.models.utils import build_kwargs_from_config
 
-__all__ = ["LayerNorm2d", "TritonRMSNorm2d", "build_norm", "reset_bn", "set_norm_eps"]
+# __all__ = ["LayerNorm2d", "TritonRMSNorm2d", "build_norm", "reset_bn", "set_norm_eps"]
+__all__ = ["LayerNorm2d", "build_norm", "reset_bn", "set_norm_eps"]
 
 
 class LayerNorm2d(nn.LayerNorm):
@@ -29,7 +30,7 @@ REGISTERED_NORM_DICT: dict[str, type] = {
     "bn2d": nn.BatchNorm2d,
     "ln": nn.LayerNorm,
     "ln2d": LayerNorm2d,
-    "trms2d": TritonRMSNorm2d,
+    #"trms2d": TritonRMSNorm2d,
 }
 
 
